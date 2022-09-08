@@ -1,0 +1,12 @@
+from numpy.linalg import eig
+df2_pca.head(3)
+# transfering data frame to array and cheking type 
+array_df = df2_pca.to_numpy()
+type(array_df)
+# making data mean centric 
+mean_by_column = np.mean(array_df.T, axis = 1)
+scaled_arr_df = array_df - mean_by_column  # here scaling has been done because rotation will happen  
+scaled_arr_df
+#find covariance matrix of above scaled data 
+cov_mat_arr_df = np.cov(scaled_arr_df.T) # transpose is beacuse we want to do it feature by feature 
+cov_mat_arr_df
